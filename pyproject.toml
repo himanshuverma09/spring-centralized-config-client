@@ -1,16 +1,16 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "requests>=2.26.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "example_package_YOUR_USERNAME_HERE"
-version = "0.0.1"
+name = "spring-centralized-config-client"
+version = "1.0.1"
 authors = [
-  { name="Example Author", email="author@example.com" },
+  { name="Himanshu Verma", email="himanshu.v09@gmail.com" },
 ]
-description = "A small example package"
+description = "A library to fetch spring centralized config in decrypted flat format."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Homepage" = "https://github.com/himanshuverma09/spring-centralized-config-client"
+"Bug Tracker" = "https://github.com/himanshuverma09/spring-centralized-config-client/issues"
