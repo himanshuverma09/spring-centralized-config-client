@@ -31,11 +31,9 @@ class SpringCentralizedConfigClient:
     def get_config(self):
         request_url = f"{self._url}/{self._branch}/{self._app_name}-{self._profile}.json"
         if self._auth_required:
-            print("AUTH")
             r = requests.get(request_url, auth=HTTPBasicAuth(
                 self._username, self._password))
         else:
-            print("NO AUTH")
             r = requests.get(request_url)
         if r.status_code == 200:
             config_json = r.json()
