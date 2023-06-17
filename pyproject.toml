@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spring_centralized_config_client"
-version = "1.4"
+version = "1.0"
 authors = [
   { name="Himanshu Verma", email="himanshu.v09@gmail.com" },
 ]
