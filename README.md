@@ -32,5 +32,5 @@ print(client.get_config())
 
 - [x] Add support for Flat Json
 - [x] Add support for Decryption 
-- [ ] Add support for CloudFoundry
+- [] Make decryption call in paralled 
 
