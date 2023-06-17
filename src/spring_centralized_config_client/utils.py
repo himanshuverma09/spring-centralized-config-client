@@ -1,5 +1,4 @@
 def make_flat_json(nested_json):
-    nested_dict = nested_json
     out = {}
 
     def flat(pairs, key=''):
@@ -14,5 +13,5 @@ def make_flat_json(nested_json):
         else:
             out[key[:-1]] = pairs
 
-    flat(nested_dict)
+    flat(nested_json)
     return out
