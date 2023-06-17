@@ -32,5 +32,5 @@ print(client.get_config())
 
 - [x] Add support for Flat Json
 - [x] Add support for Decryption 
-- [ ] Make decryption call in paralled 
+- [ ] Make decryption call in parallel
 
