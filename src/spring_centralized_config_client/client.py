@@ -50,7 +50,7 @@ class SpringCentralizedConfigClient:
 
     def _decrypt_config(self, config):
         for key in config:
-            if "{cipher}" in config[key]:
+            if CIPHER in config[key]:
                 config[key] = self._fetch_decrypted_config(
                     config[key].replace("{cipher}", ""))
         return config
