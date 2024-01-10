@@ -31,6 +31,7 @@ print(client.get_config())
 ## TODO
 
 - [x] Add support for Flat Json
-- [x] Add support for Decryption 
+- [x] Add support for Decryption
 - [ ] Make decryption call in parallel
+- [ ] Add Test Cases
 
