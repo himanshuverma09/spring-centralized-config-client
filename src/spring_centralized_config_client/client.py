@@ -1,6 +1,5 @@
 import requests
 from requests.auth import HTTPBasicAuth
-from spring_centralized_config_client.utils import make_flat_json
 
 CIPHER = "{cipher}"
 
@@ -16,7 +15,6 @@ class SpringCentralizedConfigClient:
         username='',
         password='',
         decrypt=False,
-        flat_json=False
     ) -> None:
         self._app_name = app_name
         self._profile = profile
@@ -26,10 +24,9 @@ class SpringCentralizedConfigClient:
         self._username = username
         self._password = password
         self._decrypt = decrypt
-        self._flat_json = flat_json
 
     def get_config(self):
-        request_url = f"{self._url}/{self._branch}/{self._app_name}-{self._profile}.json"
+        request_url = f"{self._url}/{self._app_name}/{self._profile}/{self._branch}"
         if self._auth_required:
             r = requests.get(request_url, auth=HTTPBasicAuth(
                 self._username, self._password))
@@ -37,11 +34,10 @@ class SpringCentralizedConfigClient:
             r = requests.get(request_url)
         if r.status_code == 200:
             config_json = r.json()
-            if self._flat_json:
-                config_json = make_flat_json(config_json)
+            config = config_json["propertySources"][0]["source"]
             if self._decrypt:
-                config_json = self._decrypt_config(config_json)
-            return config_json
+                config = self._decrypt_config(config)
+            return config
         else:
             raise Exception(
                 "Failed to get configuration",
