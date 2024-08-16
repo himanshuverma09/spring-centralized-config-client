@@ -21,7 +21,6 @@ client = SpringCentralizedConfigClient(
           auth_required=True, # Optional, Enable basic authentication, Default=False
           username="username", # Optional, Required if Auth Required is True, Default=Empty String
           password="password", # Optional, Required if Auth Required is True, Default=Empty String
-          flat_json=True, # Optional, If you want nested JSON to be flatted, Default = False
           decrypt=True, # Optional, If you want to decrypt configuration, Default = False
         )
 
@@ -30,7 +29,6 @@ print(client.get_config())
 
 ## TODO
 
-- [x] Add support for Flat Json
 - [x] Add support for Decryption 
 - [ ] Make decryption call in parallel
 
